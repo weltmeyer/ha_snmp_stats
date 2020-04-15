@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Es ist nur eine einzige Konfiguration von snmp_stats erlaubt."
+        },
+        "error": {
+            "connection_error": "Es kann keine Verbindung zum SNMP-Service hergestellt werden.",
+            "identifier_exists": "Das Konto ist bereits registriert.",
+            "invalid_credentials": "Ung\u00fcltige Anmeldeinformationen"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Passwort",
+                    "username": "Nutzername(user/installer)",
+                    "ip_address": "IP-Adresse",
+                    "scan_interval": "Aktualisierungsinterval(Sekunden)"
+                },
+                "title": "Gib deine SNMP-Anmeldeinformationen ein"
+            }
+            
+        },
+        "title": "SNMP Stats"
+    },
+    "options":{
+        "step":{
+            "init":{
+                "data":{
+                    "scan_interval": "Aktualisierungsinterval(Sekunden)"
+                }
+            }
+        }
+    }
+}

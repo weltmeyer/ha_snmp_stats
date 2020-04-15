@@ -1,0 +1,9 @@
+{
+    "domain": "snmp_stats",
+    "name": "snmp_stats",
+    "documentation": "https://www.weltmeyer.net",
+    "dependencies": [],
+    "codeowners": ["@weltmeyer"],
+    "requirements": ["pysnmp"],
+    "config_flow": true
+}
