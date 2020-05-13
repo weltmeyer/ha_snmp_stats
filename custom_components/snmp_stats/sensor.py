@@ -68,7 +68,8 @@ class SnmpStatisticsSensor(Entity):
         if self._state==state:
             return
         self._state = state
-        self.schedule_update_ha_state()
+        if self.enabled:
+            self.schedule_update_ha_state()
 
 
     def set_attributes(self, attributes):
@@ -99,9 +100,6 @@ class SnmpStatisticsSensor(Entity):
         return self._name
     def update(self):
         LOGGER.info("update "+self.entity_id)
-        """Update the phonebook if it is defined."""
-        #self.powermeter=self._sbInst.getpowermeter()
-        #self.state=self.powermeter[0]['v_l1_l2']
 
 class SnmpStatisticsMonitor:
 
@@ -222,8 +220,8 @@ class SnmpStatisticsMonitor:
         if_data=self.current_if_data
         its = __class__.get_bulk_auto(self.target_ip, [
             '1.3.6.1.2.1.2.2.1.2',#v1, ifDescr
-            '1.3.6.1.2.1.2.2.1.16',#v1, ifOutOctets
-            '1.3.6.1.2.1.2.2.1.10',#v1, ifInOctets
+            #'1.3.6.1.2.1.2.2.1.16',#v1, ifOutOctets
+            #'1.3.6.1.2.1.2.2.1.10',#v1, ifInOctets
             '1.3.6.1.2.1.31.1.1.1.1',#v2, ifName
             '1.3.6.1.2.1.31.1.1.1.18',#v2, ifAlias
             '1.3.6.1.2.1.31.1.1.1.6', #v2, ifHCInOctets
